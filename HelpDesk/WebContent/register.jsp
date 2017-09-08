@@ -29,9 +29,9 @@
 				<div id="PersonalDetails" class="w3-border ar-detail mainform">
 
 					<form class="formmain">
-						<div class="w3-col" style="width: 200px">AdharCard Number :</div>
+						<div class="w3-col" style="width: 200px">AadharCard Number :</div>
 						<div class="w3-rest">
-							<input type="text" name="anumber" placeholder="Enter AdharCard Number">
+							<input type="text" name="anumber" placeholder="Enter AadharCard Number">
 						</div>
 						<br>
 
