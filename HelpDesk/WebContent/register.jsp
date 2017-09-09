@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration - HelpDesk</title>
+<script type="text/javascript" src="js/validate.js"></script>
 <link rel="icon" href="images\icon.png" type="image/png">
 </head>
 <style>
@@ -13,7 +14,6 @@
 }
 </style>
 <body>
-
 	<jsp:include page="header.jsp"></jsp:include>
 	<h3>Hello</h3>
 
@@ -28,7 +28,7 @@
 			<div class="w3-row" style="background-image: url('images/50c.jpg');">
 				<div id="PersonalDetails" class="w3-border ar-detail mainform">
 
-					<form class="formmain">
+					<form class="formmain" name="reg" method="post" onsubmit="return validateForm()">
 						<div class="w3-col" style="width: 200px">AadharCard Number :</div>
 						<div class="w3-rest">
 							<input type="text" name="anumber" placeholder="Enter AadharCard Number">
@@ -70,7 +70,21 @@
 						<div class="w3-rest">
 							<input type="file" name="photo">
 						</div>
-						<br> 
+						<br>
+						
+						<div class="w3-col" style="width: 200px">Captcha :</div>
+						<div class="w3-rest">
+							<img src="http://localhost:8080/HelpDesk/captcha.jsp"/>
+							<a href="register.jsp">New captcha</a>
+						</div>
+						<br>
+						
+						<div class="w3-col" style="width: 200px">Enter Captcha:</div>
+						<div class="w3-rest">
+							<input type="text" name="code" placeholder="Enter Captcha">
+						</div>
+						<br>
+						
 						<center><input type="submit" value="REGISTER" class="primarybtn"></input></center>
 					</form>
 				</div>
@@ -81,6 +95,5 @@
 
 
 	<jsp:include page="footer.jsp"></jsp:include>
-
 </body>
 </html>
