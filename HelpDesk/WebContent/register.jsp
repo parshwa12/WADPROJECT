@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -31,37 +31,37 @@
 					<form class="formmain" name="reg" method="post" onsubmit="return validateForm()">
 						<div class="w3-col" style="width: 200px">AadharCard Number :</div>
 						<div class="w3-rest">
-							<input type="text" name="anumber" placeholder="Enter AadharCard Number">
+							<input type="text" name="anumber" placeholder="Enter AadharCard Number" required>
 						</div>
 						<br>
 
 						<div class="w3-col" style="width: 200px">First Name :</div>
 						<div class="w3-rest">
-							<input type="text" name="fname" placeholder="Enter First Name">
+							<input type="text" name="fname" placeholder="Enter First Name" required>
 						</div>
 						<br>
 
 						<div class="w3-col" style="width: 200px">Last Name :</div>
 						<div class="w3-rest">
-							<input type="text" name="lname" placeholder="Enter Last Name">
+							<input type="text" name="lname" placeholder="Enter Last Name" required>
 						</div>
 						<br>
 
 						<div class="w3-col" style="width: 200px">Email Id :</div>
 						<div class="w3-rest">
-							<input type="text" name="email" placeholder="Enter Email Id">
+							<input type="text" name="email" placeholder="Enter Email Id" required>
 						</div>
 						<br>
 
 						<div class="w3-col" style="width: 200px">Password :</div>
 						<div class="w3-rest">
-							<input type="password" name="password" placeholder="Enter Password">
+							<input type="password" name="password" placeholder="Enter Password" required>
 						</div>
 						<br>
 
 						<div class="w3-col" style="width: 200px">Date of Birth :</div>
 						<div class="w3-rest">
-							<input type="date" name="dob">
+							<input type="date" name="dob" required>
 						</div>
 						<br>
 
@@ -81,7 +81,7 @@
 						
 						<div class="w3-col" style="width: 200px">Enter Captcha:</div>
 						<div class="w3-rest">
-							<input type="text" name="code" placeholder="Enter Captcha">
+							<input type="text" name="code" placeholder="Enter Captcha" required>
 						</div>
 						<br>
 						
