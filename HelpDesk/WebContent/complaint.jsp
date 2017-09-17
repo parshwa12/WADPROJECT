@@ -22,7 +22,9 @@ th, td {
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<h2>Hello</h2>
+<h1>Hello</h1>
+<center>
+<div class="w3-card-4" style="width:90%">
 <table style="width:100%">
 <tr><td>
 Category:
@@ -47,7 +49,9 @@ Description:<textarea rows="5" cols="20"></textarea>
 </td>
 </tr>
 </table>
-
+</div>
+<br>
+</center>
 <jsp:include page="footer.jsp"></jsp:include>
 
 
