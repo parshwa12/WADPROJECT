@@ -1,0 +1,4 @@
+db2 -td@ -v -f test.db2 -z test1.txt
+
+note:1)open start>all programs>ibm db2>command line tools >command window administrator and then run the above query
+2)file should be on desktop
