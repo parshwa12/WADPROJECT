@@ -44,7 +44,7 @@ p {
 				higher education issues.Here,it is also provided details of
 				educational institutions,scholarships and student loans.Moreover,the
 				customers will be guided with information related to foreign
-				scholarships,exchange programmes and universities etc.</p>
+				scholarships,exchange programs and universities etc.</p>
 		</div>
 		
 
