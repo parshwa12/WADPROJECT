@@ -32,23 +32,63 @@ input {
 <body>
 	<div class="w3-container w3-white w3-top w3-cell-row w3-border"
 		style="padding: 0px 0px; height: 60px; z-index: 2">
-		<!-- <a href="#" class="w3-cell"
-			style="width: 5%; font-weight: 900; font-size: 1.5em"> <span
-			class="w3-text-white w3-padding-16 w3-left w3-margin-left w3-top w3-padding-4"
-			style="width: 5%"> <span style="width: 5%" class="themecolor">H</span>ELP<span style="width: 5%" class="themecolor">D</span>ESK</span></a> -->
-		<a href="index.jsp" class="w3-cell"
+		<a 
+		<%
+		if(session.getAttribute("email")!=null)
+			{
+		%>
+		href="profile.jsp"
+		<%
+			}
+		else{%>
+			href="about.jsp"				
+		<%
+		}		
+		%>
+		 class="w3-cell"
 			style="width: 5%; font-weight: 900; font-size: 1.5em"> <span
 			class="w3-text-white w3-padding-16 w3-left w3-margin-left w3-top w3-padding-3"
 			style="width: 5%"> <img alt="images" src="images/logo.png" height="40px" width="200px"> </span></a>
 		<div class=" w3-large w3-cell">
 		
 			<ul class="w3-navbar w3-right">
+			<%
+			if(session.getAttribute("email")!=null)
+			{
+			%>
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="newcomplaint.jsp">New Complaint</a></li>
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="previouscomplaint.jsp">Previous Complaints</a></li>
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="changepassword.jsp">Change Password</a></li>
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="LogoutServlet">Logout</a></li>				
+			<%}
+			else if(session.getAttribute("adminemail")!=null){		
+			%>	
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="adminprofile.jsp">All Complaints</a></li>
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="adminallusers.jsp">All Users</a></li>
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="adminaddadmin.jsp">Add Administrator</a></li>
+				<li><a
+					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
+					href="LogoutServlet">Logout</a></li>
+			<%}
+			else{		
+			%>	
 				<li><a
 					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
 					href="about.jsp">About</a></li>
-				<!-- <li><a
-					class="w3-text-grey w3-hover-text-white w3-padding-16 w3-black"
-					href="#">Home</a></li> -->
 				<li><a
 					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
 					href="login.jsp">Login</a></li>
@@ -58,6 +98,7 @@ input {
 				<li><a
 					class="w3-text-black w3-hover-text-white w3-hover-lime w3-padding-16 w3-white"
 					href="contactus.jsp">Contact Us</a></li>
+			<%}%>	
 			</ul>
 		</div>
 	</div> 

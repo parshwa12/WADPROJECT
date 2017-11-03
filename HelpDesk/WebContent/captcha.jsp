@@ -2,14 +2,13 @@
 <%@page import="javax.imageio.ImageIO"%>
 <%@page import="java.io.OutputStream"%>
 <%@ page import="java.awt.*" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Captcha</title>
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Captcha</title>
+	</head>
 <%
 int width=155;
 int height=50;
@@ -19,7 +18,7 @@ GradientPaint gp= new GradientPaint(0,0,Color.GREEN,0,height/2,Color.WHITE,true)
 
 g.setPaint(gp);
 
-Font f= new Font("Berlin Sans FB",Font.BOLD,26);
+Font f= new Font("Times New Roman",Font.PLAIN,26);
 
 g.setFont(f);
 
@@ -40,7 +39,7 @@ for(int i=0;i<6;i++)
 }
 session.setAttribute("captcha", captcha1);
 response.setContentType("image/png");
-g.drawString(captcha, 10, 31);
+g.drawString(captcha, 10, 28);
 
 g.dispose();
 

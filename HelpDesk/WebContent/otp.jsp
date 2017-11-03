@@ -1,34 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>OTP - HelpDesk</title>
+<link rel="icon" href="images\icon.png" type="image/png">
 </head>
 <body>
-<form action="otp" method="get">
-<div id="login_box">
-  <div id="login_header">
-        OTP Generation
-  </div>
-  <div id="form_val">
-    <div class="label">Enter OTP:</div>
-    <div class="control"><input type="number"  min="0000" max="9999" name="otp" id="otp"/></div>
-    <div id="msgbox"></div>
-  </div>
+<jsp:include page="header.jsp"></jsp:include>
+<script>
+	<%
+	try{
+		String ms=request.getParameter("msg");
+		if(ms.equals("nomatch")){%>
+			alert("Incorrect OTP! Please enter correct otp");	
+			window.location.href="otp.jsp";
+		<%}
+	}
+	catch(Exception e){
+		e.printStackTrace();		
+	}
+%>
+</script>
+<h3>Hello</h3>
 
-  <div id="login_footer">
-  <!-- <script type="text/javascript">
-  function closewindow() {
-  window.close()
-  }
-  </script>-->
-     <label>
-    <input type="submit" onclick="location.href='http://localhost:8080/IntegrateAll/change_pass.jsp'" window.close();" name="Submit" id="Submit" value="Submit" class="send_button" />
-    </label>
-  </div>
-</div>
+	<div class="w3-container" style="padding: 0.01em 0px;">
+		<div class="w3-row">
+			<center>
+				<h1>Enter OTP</h1>
+			</center>
+
+			<div class="w3-row" style="background-image: url('images/50c.jpg');">
+				<div id="PersonalDetails" class="w3-border ar-detail mainform">
+
+					<form class="formmain" action="OtpServlet" method="post">
+						<div class="w3-col" style="width: 200px">Enter OTP :</div>
+						<div class="w3-rest" >
+							<input type="number" min="0000" max="99999" name="otp" placeholder="Enter otp" style="width: 200px" required>
+						</div>
+						<br>
+
+						<br> <center><input type="submit" value="Submit" class="primarybtn"></input></center>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<jsp:include page="footer.jsp"></jsp:include>
+
 
 </body>
 </html>

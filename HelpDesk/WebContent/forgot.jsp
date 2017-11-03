@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -26,11 +26,11 @@
 
 						<div class="w3-col" style="width: 200px">Email Id :</div>
 						<div class="w3-rest">
-							<input type="text" name="email" placeholder="Enter Email Id">
+							<input type="text" name="email" placeholder="Enter Email Id" required>
 						</div>
 						<br>
 						
-						<center><input type="submit" value="New Password" class="primarybtn"></input></center>
+						<center><input type="submit" value="Get New Password" class="primarybtn" style="width:200px"></input></center>
 					</form>
 				</div>
 			</div>

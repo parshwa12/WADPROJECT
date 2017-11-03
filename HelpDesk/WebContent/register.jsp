@@ -1,3 +1,4 @@
+<%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE>
@@ -6,6 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration - HelpDesk</title>
 <script type="text/javascript" src="js/validate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#aadharimg')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
 <link rel="icon" href="images\icon.png" type="image/png">
 </head>
 <style>
@@ -28,7 +44,7 @@
 			<div class="w3-row" style="background-image: url('images/50c.jpg');">
 				<div id="PersonalDetails" class="w3-border ar-detail mainform">
 
-					<form class="formmain" name="reg" method="post" onsubmit="return validateForm()">
+					<form class="formmain" action="RegisterServlet" name="reg" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
 						<div class="w3-col" style="width: 200px">AadharCard Number :</div>
 						<div class="w3-rest">
 							<input type="text" name="anumber" placeholder="Enter AadharCard Number" required>
@@ -58,6 +74,12 @@
 							<input type="password" name="password" placeholder="Enter Password" required>
 						</div>
 						<br>
+						
+						<div class="w3-col" style="width: 200px">Confirm Password :</div>
+						<div class="w3-rest">
+							<input type="password" name="confirmpassword" placeholder="Confirm Password" required>
+						</div>
+						<br>
 
 						<div class="w3-col" style="width: 200px">Date of Birth :</div>
 						<div class="w3-rest">
@@ -65,10 +87,12 @@
 						</div>
 						<br>
 
-						<div class="w3-col" style="width: 200px">Upload AdharCard
+						<div class="w3-col" style="width: 200px">Upload Aadhar Card<br>
 							Photo :</div>
 						<div class="w3-rest">
-							<input type="file" name="photo">
+							<img src = "images/default.jpg" style="width:250px; height:120px;" id="aadharimg">
+							<br>
+							<input type="file" name="photo" accept="image/jpg" onchange="readURL(this);" required>
 						</div>
 						<br>
 						
